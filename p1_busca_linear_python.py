@@ -4,13 +4,13 @@ import time
 import random
 #Busca Linear
 
-def busca_linear(A, n, x):
-    resposta = -1
-    for i in range(0, n):
-        if A[i]==x: resposta = i
-    return resposta
+def busca_linear(A, n, x):  #O(n) predomina
+    resposta = -1                   #O(1)
+    for i in range(0, n):           #O(n)
+        if A[i]==x: resposta = i    #O(1)
+    return resposta                 #O(1)
 
-def busca_linear_melhorada(A, n, x):
+def busca_linear_melhorada(A, n, x): #O(n) no pior caso
     reposta = -1
     for i in range(0, n):
         if A[i] == x: 
@@ -18,7 +18,7 @@ def busca_linear_melhorada(A, n, x):
             break
     return resposta
 
-def busca_linear_sentinela(A, n, x):
+def busca_linear_sentinela(A, n, x): #O(n) no pior caso
     resposta = -1
 
     ultimo = A[n-1]
