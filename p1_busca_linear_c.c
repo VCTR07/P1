@@ -2,11 +2,12 @@
 # include<stdio.h>
 #include<stdlib.h>
 
-int buscaLinear(int a[], int n, int x){
+int buscaLinearMelhorada(int a[], int n, int x){
     int i;
     for (i = 0; i < n; i++){
         if (a[i] == x){
             return i;
+            break;
         }
     }
     return -1;
@@ -25,11 +26,11 @@ int main (){
     float tempo;
     time_t t_ini, t_fim;
     t_ini = time(NULL);
-    int saida = buscaLinear(a, n, x);    
+    int saida = buscaLinearMelhorada(a, n, x);    
     t_fim = time(NULL);
     tempo = difftime(t_fim, t_ini);
 
-    printf("Na BL, para o número %d temos a resposta %d, com tempo de execução em ns de %f.", x, saida, tempo);
+    printf("Na BLM, para o número %d temos a resposta %d, com tempo de execução em ns de %f.", x, saida, tempo);
 
     return 0;
 }
