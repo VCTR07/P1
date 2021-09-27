@@ -7,18 +7,18 @@
 
 void bubble_sort(int vetor[], int tam){
 	//variável auxiliar
-	int proximo = 0;
+	int proximo = 0;								// 1 vez
 
 	//varre todo o vetor externo
-	for(int i = 0; i < tam; i++){
+	for(int i = 0; i < tam; i++){					// n-1 vezes
 		//trabalha com os próximos elementos
-		for(int j = 0; j < (tam - 1); j++){
+		for(int j = 0; j < (tam - 1); j++){			// n-1 vezes
 			//Ocorre a troca
-	        if(vetor[j] > vetor[j+1]){
-	        	proximo = vetor[j];
-	        	vetor[j] = vetor[j+1];
-	        	vetor[j+1]=proximo;
-	        }
+	        if(vetor[j] > vetor[j+1]){				// 1 vez por loop
+	        	proximo = vetor[j];					// 1 vez por loop
+	        	vetor[j] = vetor[j+1];				// 1 vez por loop
+	        	vetor[j+1]=proximo;					// 1 vez por loop
+	        }										// Total = 1 + (n-1)*[(n-1) + 4] que ef aproximadamente n^2 ou O(n^2)
 	    }
 	 }
 }

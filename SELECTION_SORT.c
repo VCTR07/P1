@@ -6,24 +6,24 @@
 #include <time.h>
 
 void select_sort(int vetor[], int tam){
-  int menor, troca;
+  int menor, troca;                                                       // 1 vez
   //Loop externo para repassar todo vetor
-  for(int i = 0; i < (tam-1); i++){
+  for(int i = 0; i < (tam-1); i++){                                       // n-1 vezes
 	//variável para acompanhar o loop for pegando sempre o menor elemento
-	menor = i;
+	menor = i;                                                              // 1 vez por loop
 	//Loop interno para trabalhar com o próximo elemento
-    for(int j = (i+1); j < tam; j++){
-      if(vetor[j] < vetor[menor]){
-        menor = j;
+    for(int j = (i+1); j < tam; j++){                                     // n-1 vezes
+      if(vetor[j] < vetor[menor]){                                        // 1 vez por loop
+        menor = j;                                                        // 1 vez por loop
       }
     }
     //Onde ocorre a troca
-    if(i != menor){
-      troca = vetor[i];
-      vetor[i] = vetor[menor];
-      vetor[menor] = troca;
-    }
-  }
+    if(i != menor){                                                       // 1 vez por loop
+      troca = vetor[i];                                                   // 1 vez por loop
+      vetor[i] = vetor[menor];                                            // 1 vez por loop
+      vetor[menor] = troca;                                               // 1 vez por loop
+    }                                                                     // Total = 1 + 5(n-1) + (n^2+n-2)/2
+  }                                                                       // que eh aproximadamente (n^2)/2 ou O(n^2)
 }
 
 int main() {

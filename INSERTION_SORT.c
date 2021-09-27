@@ -6,19 +6,19 @@
 #include <time.h>
 
 void insert_sort(int vetor[], int tam){
-  int troca;
+  int troca; // 1 vez
 
   //Percorre todo o vetor
-  for(int i = 1; i < tam; i++){
-    int proximo = i;
+  for(int i = 1; i < tam; i++){   // n-1 vezes
+    int proximo = i;              // 1 vez
 
     //Responsável pelas trocas
-    while((proximo != 0) && (vetor[proximo] < vetor[proximo - 1])){
-      troca = vetor[proximo];
-      vetor[proximo] = vetor[proximo - 1];
-      vetor[proximo - 1] = troca;
-      proximo--;
-    }
+    while((proximo != 0) && (vetor[proximo] < vetor[proximo - 1])){  // n vezes
+      troca = vetor[proximo];                                        // 1 vez por loop
+      vetor[proximo] = vetor[proximo - 1];                           // 1 vez por loop
+      vetor[proximo - 1] = troca;                                    // 1 vez por loop
+      proximo--;                                                     // 1 vez por loop
+    }                                                                // Total = 1 + [(n-1) + 2]*[(n) + 4] que eh aproximadamente n^2 ou O(n^2)
   }
 }
 
