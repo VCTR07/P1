@@ -1,8 +1,10 @@
 # INSERTION SORT
 
 import random
+import time
 
 lista = random.sample(range(1, 10001), 10000)
+random.shuffle(lista)
 
 def insertion_sort(lista):
     n = len(lista)
@@ -15,6 +17,9 @@ def insertion_sort(lista):
         lista[j + 1] = chave
     return lista
 
+inicio = time.time()
 insertion_sort(lista)
+fim = time.time()
 
 print(lista[0:10])
+print("tempo de execução: ", fim - inicio)

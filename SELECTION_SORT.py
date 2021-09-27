@@ -1,8 +1,10 @@
 # SELECTION SORT
 
 import random
+import time
 
 lista = random.sample(range(1, 10001), 10000)
+random.shuffle(lista)
 
 def selection_sort(lista):
     n = len(lista)
@@ -18,6 +20,9 @@ def selection_sort(lista):
 
     return lista
 
+inicio = time.time()
 selection_sort(lista)
+fim = time.time()
 
 print(lista[0:10])
+print('Tempo de execução: ', fim - inicio)
