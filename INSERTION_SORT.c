@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include<conio.h>
 #include<stdlib.h>
-#include <time.h>
 
 void insert_sort(int vetor[], int tam){
   int troca; // 1 vez
@@ -24,7 +23,6 @@ void insert_sort(int vetor[], int tam){
 
 int main() {
 
-  clock_t t;
 
   int vetor[10000];
   srand(10000);
@@ -34,16 +32,14 @@ int main() {
   int n = sizeof(vetor)/sizeof(int);
 
 
-   t = clock();
    //Aplicando a ordenação;
    insert_sort(vetor, 10000);
-   t = clock() - t;
+
 
    //Apresentando o vetor ordenado
    for(int i = 0; i < 50; i++){
 	   printf("%d\t", vetor[i]);
    }
    printf("...");
-   printf("\nTempo de execucao: %d", t);
 
 }

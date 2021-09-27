@@ -1,7 +1,6 @@
 # SELECTION SORT
 
 import random
-import time
 
 lista = random.sample(range(1, 10001), 10000)
 random.shuffle(lista)
@@ -20,9 +19,8 @@ def selection_sort(lista):
                                                     # Total = 1 + 5(n-1) + (n^2+n-2)/2 que é aproximadamente (n^2)/2
     return lista                                    # ou O(n^2)
 
-inicio = time.time()
+
 selection_sort(lista)
-fim = time.time()
+
 
 print(lista[0:10])
-print('Tempo de execução: ', fim - inicio)
